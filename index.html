@@ -1,0 +1,537 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Juliana | Portfólio</title>
+<meta name="description" content="Portfólio de Juliana: Engenharia de Software, pesquisa em Filosofia da Tecnologia e projetos autorais.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,400&family=Mulish:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --paper:#F0F7FD;
+    --ink:#173A5E;
+    --ink-soft:#3E6488;
+    --blue:#1C6BAA;
+    --blue-deep:#1E86CE;
+    --soft:#9BD1F0;
+    --line:#D3E6F5;
+    --mist:#E3F1FB;
+    --serif:'Cormorant Garamond', Georgia, serif;
+    --sans:'Mulish', system-ui, sans-serif;
+  }
+
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0;
+    background:var(--paper);
+    color:var(--ink);
+    font-family:var(--sans);
+    font-weight:400;
+    font-size:17px;
+    line-height:1.75;
+    -webkit-font-smoothing:antialiased;
+  }
+
+  .wrap{
+    max-width:760px;
+    margin:0 auto;
+    padding:0 28px;
+  }
+
+  a{color:var(--blue);text-decoration:none;}
+  a:hover{text-decoration:underline;text-underline-offset:3px;}
+  a:focus-visible,button:focus-visible{
+    outline:2px solid var(--blue);
+    outline-offset:3px;
+    border-radius:2px;
+  }
+
+  /* Navegação */
+  nav{
+    position:sticky;
+    top:0;
+    z-index:10;
+    background:rgba(240,247,253,0.92);
+    backdrop-filter:blur(8px);
+    border-bottom:1px solid var(--line);
+  }
+  nav .wrap{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    flex-wrap:wrap;
+    gap:6px 22px;
+    padding-top:14px;
+    padding-bottom:14px;
+  }
+  nav .brand{
+    font-family:var(--serif);
+    font-size:1.45rem;
+    font-weight:500;
+    letter-spacing:.02em;
+    color:var(--blue-deep);
+  }
+  nav ul{
+    list-style:none;
+    display:flex;
+    flex-wrap:wrap;
+    gap:20px;
+    margin:0;
+    padding:0;
+  }
+  nav ul a{
+    color:var(--ink-soft);
+    font-size:.9rem;
+    font-weight:500;
+  }
+  nav ul a:hover{color:var(--blue);}
+
+  /* Motivo botânico */
+  .bloom{color:var(--soft);}
+
+  /* Cabeçalho */
+  header{padding:82px 0 64px;}
+  header .bloom{width:76px;height:76px;display:block;margin-bottom:26px;opacity:.9;}
+  h1{
+    font-family:var(--serif);
+    font-weight:300;
+    font-size:4.4rem;
+    line-height:1.02;
+    letter-spacing:.005em;
+    margin:0 0 14px;
+    color:var(--blue-deep);
+  }
+  .lede{
+    font-family:var(--serif);
+    font-weight:400;
+    font-style:italic;
+    font-size:1.7rem;
+    line-height:1.3;
+    color:var(--blue);
+    margin:0 0 30px;
+    max-width:34ch;
+  }
+  header p.intro{
+    max-width:60ch;
+    color:var(--ink-soft);
+    margin:0;
+  }
+
+  /* Seções */
+  section{padding:34px 0;}
+  .section-head{
+    display:flex;
+    align-items:center;
+    gap:18px;
+    margin:0 0 34px;
+  }
+  .section-head h2{
+    font-family:var(--serif);
+    font-weight:400;
+    font-size:2.5rem;
+    line-height:1.1;
+    margin:0;
+    color:var(--blue-deep);
+    white-space:nowrap;
+  }
+  .section-head .rule{
+    height:1px;
+    background:var(--line);
+    flex:1;
+  }
+
+  .subhead{
+    font-family:var(--serif);
+    font-weight:500;
+    font-size:1.55rem;
+    color:var(--blue);
+    margin:44px 0 20px;
+  }
+  .subhead:first-of-type{margin-top:0;}
+
+  p{margin:0 0 18px;max-width:64ch;}
+  .prose p:last-child{margin-bottom:0;}
+
+  /* Entradas editoriais */
+  .entry{
+    border-left:2px solid var(--line);
+    padding:2px 0 2px 24px;
+    margin:0 0 34px;
+    transition:border-color .25s ease;
+  }
+  .entry:hover{border-color:var(--soft);}
+  .entry:last-child{margin-bottom:0;}
+  .entry h3{
+    font-family:var(--serif);
+    font-weight:500;
+    font-size:1.5rem;
+    line-height:1.2;
+    margin:0 0 4px;
+    color:var(--ink);
+  }
+  .entry .context{
+    font-size:.86rem;
+    font-weight:600;
+    letter-spacing:.02em;
+    color:var(--ink-soft);
+    margin:0 0 14px;
+  }
+  .entry p{margin-bottom:14px;}
+  .note{
+    font-style:italic;
+    color:var(--ink-soft);
+    font-size:.97rem;
+    margin:0;
+  }
+  .note b{font-style:normal;font-weight:600;color:var(--blue);}
+
+  /* Lista de fundamentos */
+  ul.plain{
+    margin:0 0 14px;
+    padding-left:20px;
+    max-width:64ch;
+  }
+  ul.plain li{margin-bottom:6px;}
+  ul.plain li::marker{color:var(--soft);}
+
+  /* Marcador para preencher */
+  .todo{
+    display:inline;
+    background:var(--mist);
+    color:#175A8C;
+    font-style:italic;
+    font-size:.92em;
+    padding:1px 7px;
+    border-radius:3px;
+    border:1px dashed var(--soft);
+  }
+
+  /* Formação */
+  .timeline{margin:0;padding:0;list-style:none;}
+  .timeline li{
+    display:grid;
+    grid-template-columns:132px 1fr;
+    gap:20px;
+    padding:16px 0;
+    border-top:1px solid var(--line);
+  }
+  .timeline li:last-child{border-bottom:1px solid var(--line);}
+  .timeline .when{
+    font-family:var(--serif);
+    font-size:1.25rem;
+    color:var(--blue);
+    font-weight:500;
+  }
+  .timeline .what strong{
+    display:block;
+    font-weight:600;
+    color:var(--ink);
+  }
+  .timeline .what span{color:var(--ink-soft);font-size:.95rem;}
+
+  /* Divisor botânico */
+  .divider{
+    display:flex;
+    align-items:center;
+    gap:22px;
+    padding:20px 0;
+  }
+  .divider .rule{height:1px;background:var(--line);flex:1;}
+  .divider .bloom{width:26px;height:26px;}
+
+  /* Contato */
+  #contato{padding-bottom:96px;}
+  .contact-list{
+    list-style:none;
+    margin:0;
+    padding:0;
+    display:grid;
+    gap:14px;
+  }
+  .contact-list li{
+    display:grid;
+    grid-template-columns:150px 1fr;
+    gap:16px;
+    align-items:baseline;
+  }
+  .contact-list .label{
+    font-family:var(--serif);
+    font-size:1.15rem;
+    color:var(--ink-soft);
+  }
+
+  footer{
+    border-top:1px solid var(--line);
+    padding:26px 0 60px;
+    color:var(--soft);
+    font-size:.85rem;
+  }
+
+  /* Entrada suave, respeitando preferência de movimento */
+  header .bloom,h1,.lede,header p.intro{
+    opacity:0;
+    animation:rise .9s ease forwards;
+  }
+  h1{animation-delay:.08s;}
+  .lede{animation-delay:.16s;}
+  header p.intro{animation-delay:.24s;}
+  @keyframes rise{from{opacity:0;transform:translateY(10px);}to{opacity:1;transform:none;}}
+  @media (prefers-reduced-motion:reduce){
+    html{scroll-behavior:auto;}
+    header .bloom,h1,.lede,header p.intro{animation:none;opacity:1;}
+  }
+
+  /* Responsivo */
+  @media (max-width:640px){
+    body{font-size:16px;}
+    header{padding:56px 0 44px;}
+    h1{font-size:3rem;}
+    .lede{font-size:1.4rem;}
+    .section-head h2{font-size:2rem;white-space:normal;}
+    .timeline li{grid-template-columns:1fr;gap:4px;}
+    .contact-list li{grid-template-columns:1fr;gap:2px;}
+    nav .brand{font-size:1.25rem;}
+    nav ul{gap:14px;}
+    nav ul a{font-size:.82rem;}
+  }
+</style>
+</head>
+<body>
+
+<!-- Definição do motivo botânico (dália em traço fino), reutilizado na página -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="dahlia" viewBox="0 0 100 100">
+    <g fill="none" stroke="currentColor" stroke-width="1.1" stroke-linecap="round">
+      <g transform="rotate(0 50 50)"><ellipse cx="50" cy="26" rx="5.4" ry="16"/></g>
+      <g transform="rotate(45 50 50)"><ellipse cx="50" cy="26" rx="5.4" ry="16"/></g>
+      <g transform="rotate(90 50 50)"><ellipse cx="50" cy="26" rx="5.4" ry="16"/></g>
+      <g transform="rotate(135 50 50)"><ellipse cx="50" cy="26" rx="5.4" ry="16"/></g>
+      <g transform="rotate(180 50 50)"><ellipse cx="50" cy="26" rx="5.4" ry="16"/></g>
+      <g transform="rotate(225 50 50)"><ellipse cx="50" cy="26" rx="5.4" ry="16"/></g>
+      <g transform="rotate(270 50 50)"><ellipse cx="50" cy="26" rx="5.4" ry="16"/></g>
+      <g transform="rotate(315 50 50)"><ellipse cx="50" cy="26" rx="5.4" ry="16"/></g>
+      <g transform="rotate(22.5 50 50)"><ellipse cx="50" cy="37" rx="3.9" ry="10.5"/></g>
+      <g transform="rotate(67.5 50 50)"><ellipse cx="50" cy="37" rx="3.9" ry="10.5"/></g>
+      <g transform="rotate(112.5 50 50)"><ellipse cx="50" cy="37" rx="3.9" ry="10.5"/></g>
+      <g transform="rotate(157.5 50 50)"><ellipse cx="50" cy="37" rx="3.9" ry="10.5"/></g>
+      <g transform="rotate(202.5 50 50)"><ellipse cx="50" cy="37" rx="3.9" ry="10.5"/></g>
+      <g transform="rotate(247.5 50 50)"><ellipse cx="50" cy="37" rx="3.9" ry="10.5"/></g>
+      <g transform="rotate(292.5 50 50)"><ellipse cx="50" cy="37" rx="3.9" ry="10.5"/></g>
+      <g transform="rotate(337.5 50 50)"><ellipse cx="50" cy="37" rx="3.9" ry="10.5"/></g>
+      <circle cx="50" cy="50" r="4.6"/>
+    </g>
+  </symbol>
+</svg>
+
+<nav>
+  <div class="wrap">
+    <span class="brand">Juliana</span>
+    <ul>
+      <li><a href="#sobre">Sobre</a></li>
+      <li><a href="#projetos">Projetos</a></li>
+      <li><a href="#criacoes">Criações</a></li>
+      <li><a href="#formacao">Formação</a></li>
+      <li><a href="#contato">Contato</a></li>
+    </ul>
+  </div>
+</nav>
+
+<header>
+  <div class="wrap">
+    <svg class="bloom" aria-hidden="true"><use href="#dahlia"/></svg>
+    <h1>Juliana</h1>
+    <p class="lede">No encontro entre as humanidades e a tecnologia.</p>
+    <p class="intro">Bacharel em História e estudante de Engenharia de Software, dedico-me ao desenvolvimento de software, à pesquisa sobre as relações entre tecnologia, poder e sociedade, e à condução de projetos autorais. Interessa-me tanto construir sistemas quanto compreender criticamente seus efeitos sobre as pessoas.</p>
+  </div>
+</header>
+
+<main>
+
+  <section id="sobre">
+    <div class="wrap">
+      <div class="section-head">
+        <h2>Sobre</h2>
+        <div class="rule"></div>
+      </div>
+      <div class="prose">
+        <p>Meu percurso reúne três dimensões que costumam caminhar separadas. Da formação em História trago o rigor da investigação e a leitura crítica dos fenômenos culturais. Da Engenharia de Software, a prática de projetar, construir e manter sistemas em equipe. E de iniciativas próprias, da pesquisa científica a um pequeno negócio autoral, a experiência de conceber algo do zero e conduzi-lo até o fim.</p>
+        <p>Esse cruzamento orienta o modo como trabalho: penso a tecnologia não apenas como ferramenta, mas como objeto de estudo e de responsabilidade. É a partir dessa perspectiva que desenvolvo software, conduzo pesquisas e crio.</p>
+      </div>
+    </div>
+  </section>
+
+  <div class="wrap"><div class="divider"><div class="rule"></div><svg class="bloom" aria-hidden="true"><use href="#dahlia"/></svg><div class="rule"></div></div></div>
+
+  <section id="projetos">
+    <div class="wrap">
+      <div class="section-head">
+        <h2>Portfólio de projetos</h2>
+        <div class="rule"></div>
+      </div>
+
+      <h3 class="subhead">Software e tecnologia</h3>
+
+      <div class="entry">
+        <h3>Sistema web de cadastro, autenticação e reservas</h3>
+        <p class="context">Estágio em desenvolvimento de software, PUCPR</p>
+        <p>Participo do desenvolvimento e da manutenção de um sistema web interno, construído em PHP com banco de dados MySQL, contemplando funcionalidades de cadastro, autenticação e reserva. O trabalho segue um fluxo de versionamento profissional, com revisão de código por meio de Pull Requests antes da publicação em ambiente de homologação. Documento ainda o fluxo técnico da aplicação em notação BPMN, conforme os padrões de modelagem adotados pela instituição.</p>
+        <p class="note"><b>O que demonstra:</b> prática de desenvolvimento em equipe, com processo de revisão de código e documentação técnica.</p>
+      </div>
+
+      <div class="entry">
+        <h3>Elderia</h3>
+        <p class="context">Projeto acadêmico em JavaFX</p>
+        <p>Aplicação desktop desenvolvida em JavaFX no âmbito da graduação em Engenharia de Software.
+        <!-- PREENCHER: descreva em uma ou duas frases o que o Elderia faz e qual foi o seu papel. Se houver repositório público, adicione o link. -->
+        <span class="todo">Preencher: descreva o que o Elderia faz, seu papel e o link do repositório, se houver.</span></p>
+        <p class="note"><b>O que demonstra:</b> programação orientada a objetos e construção de interface gráfica desktop.</p>
+      </div>
+
+      <div class="entry">
+        <h3>Fundamentos de desenvolvimento</h3>
+        <p class="context">Projetos de disciplina, PUCPR</p>
+        <p>Conjunto de trabalhos práticos que consolidam a base da engenharia de software:</p>
+        <ul class="plain">
+          <li>modelagem de máquinas de estado em UML;</li>
+          <li>implementação de mecanismos de concorrência com threads e semáforos em Python;</li>
+          <li>desenvolvimento de back-end em PHP com aplicação do padrão Post/Redirect/Get.</li>
+        </ul>
+        <p class="note"><b>O que demonstra:</b> domínio dos fundamentos de modelagem, concorrência e desenvolvimento web.</p>
+      </div>
+
+      <div class="entry">
+        <h3>Formação técnica complementar</h3>
+        <p class="context">Certificações de trilha, PUCPR</p>
+        <p>Certificações concluídas nas trilhas de Desenvolvedor de Sistemas Computacionais, Analista de Requisitos e Desenvolvedor Web.</p>
+      </div>
+
+      <h3 class="subhead">Pesquisa</h3>
+
+      <div class="entry">
+        <h3>Inteligência artificial, poder e vigilância</h3>
+        <p class="context">Iniciação Científica, bolsa PIBIC / CNPq</p>
+        <p>Pesquisa nas áreas de Filosofia da Tecnologia e Filosofia da Educação, dedicada às relações entre inteligência artificial, poder e vigilância. A investigação dialoga com autores como Shoshana Zuboff, Kate Crawford, Michel Foucault, Achille Mbembe e Donna Haraway, e resultou na elaboração de relatório científico completo, com bolsa do Conselho Nacional de Desenvolvimento Científico e Tecnológico.</p>
+        <p class="note"><b>O que demonstra:</b> capacidade de investigação, leitura crítica da tecnologia e escrita acadêmica rigorosa.</p>
+      </div>
+
+      <div class="entry">
+        <h3>Tecnologia, vigilância e videogames</h3>
+        <p class="context">Pesquisa de mestrado em História, UFPR</p>
+        <p>Pesquisa que articula filosofia da tecnologia, estudos de vigilância e videogames como objeto de análise histórica e cultural, aprofundando a reflexão iniciada na graduação.</p>
+        <p class="note"><b>O que demonstra:</b> pensamento interdisciplinar entre tecnologia, cultura e humanidades.</p>
+      </div>
+
+      <h3 class="subhead">Coletivos e liderança</h3>
+
+      <div class="entry">
+        <h3>Presidência do Centro Acadêmico de Engenharia de Software</h3>
+        <p class="context">CABES, PUCPR</p>
+        <p>Presido o centro acadêmico do curso, representando os estudantes, articulando demandas junto à instituição e organizando iniciativas voltadas à comunidade discente.
+        <!-- PREENCHER: acrescente uma realização concreta (um evento organizado, uma conquista, um número de participantes). -->
+        <span class="todo">Preencher: acrescente uma realização concreta, como um evento organizado ou uma conquista da gestão.</span></p>
+        <p class="note"><b>O que demonstra:</b> liderança, representação e organização coletiva.</p>
+      </div>
+
+      <div class="entry">
+        <h3>Direção do Campus Curitiba</h3>
+        <p class="context">Diretório Central dos Estudantes, chapa Soma</p>
+        <p>Integro a direção do Diretório Central dos Estudantes como responsável pelo Campus Curitiba, atuando na representação estudantil em âmbito institucional.
+        <!-- PREENCHER: descreva uma ação ou projeto específico que você conduziu nessa função. -->
+        <span class="todo">Preencher: descreva uma ação ou projeto específico que você conduziu nessa função.</span></p>
+        <p class="note"><b>O que demonstra:</b> atuação em gestão e representação de âmbito ampliado.</p>
+      </div>
+
+      <div class="entry">
+        <h3>Grupo de Estudos Lipman e Sharp</h3>
+        <p class="context">Membro fundadora</p>
+        <p>Participei da fundação de um grupo de estudos dedicado à filosofia e ao desenvolvimento do pensamento crítico, contribuindo para sua concepção e para a continuidade de suas atividades.</p>
+        <p class="note"><b>O que demonstra:</b> proatividade e iniciativa intelectual na criação de um espaço coletivo.</p>
+      </div>
+
+    </div>
+  </section>
+
+  <div class="wrap"><div class="divider"><div class="rule"></div><svg class="bloom" aria-hidden="true"><use href="#dahlia"/></svg><div class="rule"></div></div></div>
+
+  <section id="criacoes">
+    <div class="wrap">
+      <div class="section-head">
+        <h2>Coleção de criações</h2>
+        <div class="rule"></div>
+      </div>
+
+      <div class="entry">
+        <h3>Sweet Dahlia</h3>
+        <p class="context">Marca de brechó autoral, anteriormente B-Side Club</p>
+        <p>Concebi e conduzo um brechó autoral, responsável por toda a sua identidade de marca, conceito e comunicação. A proposta tem raízes na cultura do disco de vinil e na estética da tatuagem tradicional, com curadoria voltada a estilos alternativo, streetwear, Y2K e vintage.</p>
+        <p>Conduzi o processo de rebranding de B-Side Club para Sweet Dahlia, criando um nome de inspiração floral e um logotipo com andorinha e flor em traço tradicional. A dália faz referência à minha gata Dalila, e o conceito nasceu inspirado nas minhas duas gatas, Mimi e Dalila. Produzo o conteúdo da marca nas redes sociais, incluindo roteiros de vídeo sobre fast fashion e identificação de peças vintage, além da pesquisa e da curadoria das peças.</p>
+        <!-- PREENCHER: adicione o @ do Instagram e, se possível, prints do feed ou do logotipo. -->
+        <p><span class="todo">Preencher: adicione o Instagram da loja e imagens do feed ou do logotipo.</span></p>
+        <p class="note"><b>O que demonstra:</b> empreendedorismo, direção de arte, criação de conteúdo e consistência de marca.</p>
+      </div>
+
+      <div class="entry">
+        <h3>Comunicação e conteúdo</h3>
+        <p class="context">Escrita acadêmica e criativa</p>
+        <p>Entre a escrita acadêmica, a produção de roteiros para redes sociais e a redação de textos, transito com naturalidade entre o registro rigoroso e o criativo.
+        <!-- PREENCHER: este e o campo mais livre. Inclua textos, poemas, artesanato, pinturas, um canal, personalizacao de roupas ou qualquer criacao que te orgulhe. -->
+        <span class="todo">Preencher: este é o campo mais livre do portfólio. Inclua outras criações que te orgulham, de textos e artesanato a projetos pessoais.</span></p>
+      </div>
+
+    </div>
+  </section>
+
+  <div class="wrap"><div class="divider"><div class="rule"></div><svg class="bloom" aria-hidden="true"><use href="#dahlia"/></svg><div class="rule"></div></div></div>
+
+  <section id="formacao">
+    <div class="wrap">
+      <div class="section-head">
+        <h2>Formação</h2>
+        <div class="rule"></div>
+      </div>
+      <ul class="timeline">
+        <li>
+          <span class="when">2024</span>
+          <span class="what"><strong>Bacharelado em História</strong><span>PUCPR, concluído</span></span>
+        </li>
+        <li>
+          <span class="when">Em curso</span>
+          <span class="what"><strong>Engenharia de Software</strong><span>PUCPR</span></span>
+        </li>
+        <li>
+          <span class="when">Em curso</span>
+          <span class="what"><strong>Mestrado em História</strong><span>UFPR</span></span>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <div class="wrap"><div class="divider"><div class="rule"></div><svg class="bloom" aria-hidden="true"><use href="#dahlia"/></svg><div class="rule"></div></div></div>
+
+  <section id="contato">
+    <div class="wrap">
+      <div class="section-head">
+        <h2>Contato</h2>
+        <div class="rule"></div>
+      </div>
+      <!-- PREENCHER: substitua os campos abaixo pelos seus links reais. -->
+      <ul class="contact-list">
+        <li><span class="label">GitHub</span><span><a href="#">github.com/seu-usuario</a> <span class="todo">preencher</span></span></li>
+        <li><span class="label">LinkedIn</span><span><a href="#">linkedin.com/in/seu-perfil</a> <span class="todo">preencher</span></span></li>
+        <li><span class="label">E-mail</span><span><a href="#">seu-email@exemplo.com</a> <span class="todo">preencher</span></span></li>
+        <li><span class="label">Sweet Dahlia</span><span><a href="#">instagram.com/sua-loja</a> <span class="todo">preencher</span></span></li>
+      </ul>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap">Juliana, 2026. Portfólio.</div>
+</footer>
+
+</body>
+</html>
