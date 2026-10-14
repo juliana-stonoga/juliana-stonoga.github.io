@@ -1,0 +1,288 @@
+:root{
+  --paper:#F0F7FD;
+  --ink:#173A5E;
+  --ink-soft:#3E6488;
+  --blue:#1C6BAA;
+  --blue-deep:#1E86CE;
+  --soft:#9BD1F0;
+  --line:#D3E6F5;
+  --mist:#E3F1FB;
+  --serif:'Cormorant Garamond', Georgia, serif;
+  --sans:'Mulish', system-ui, sans-serif;
+}
+
+*{box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{
+  margin:0;
+  background:var(--paper);
+  color:var(--ink);
+  font-family:var(--sans);
+  font-weight:400;
+  font-size:17px;
+  line-height:1.75;
+  -webkit-font-smoothing:antialiased;
+}
+
+.wrap{
+  max-width:760px;
+  margin:0 auto;
+  padding:0 28px;
+}
+
+a{color:var(--blue);text-decoration:none;}
+a:hover{text-decoration:underline;text-underline-offset:3px;}
+a:focus-visible,button:focus-visible{
+  outline:2px solid var(--blue);
+  outline-offset:3px;
+  border-radius:2px;
+}
+
+/* Navegação */
+nav{
+  position:sticky;
+  top:0;
+  z-index:10;
+  background:rgba(240,247,253,0.92);
+  backdrop-filter:blur(8px);
+  border-bottom:1px solid var(--line);
+}
+nav .wrap{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  flex-wrap:wrap;
+  gap:6px 22px;
+  padding-top:14px;
+  padding-bottom:14px;
+}
+nav .brand{
+  font-family:var(--serif);
+  font-size:1.45rem;
+  font-weight:500;
+  letter-spacing:.02em;
+  color:var(--blue-deep);
+}
+nav ul{
+  list-style:none;
+  display:flex;
+  flex-wrap:wrap;
+  gap:20px;
+  margin:0;
+  padding:0;
+}
+nav ul a{
+  color:var(--ink-soft);
+  font-size:.9rem;
+  font-weight:500;
+}
+nav ul a:hover{color:var(--blue);}
+
+/* Motivo botânico */
+.bloom{color:var(--soft);}
+
+/* Cabeçalho */
+header{padding:82px 0 64px;}
+header .bloom{width:76px;height:76px;display:block;margin-bottom:26px;opacity:.9;}
+h1{
+  font-family:var(--serif);
+  font-weight:300;
+  font-size:4.4rem;
+  line-height:1.02;
+  letter-spacing:.005em;
+  margin:0 0 14px;
+  color:var(--blue-deep);
+}
+.lede{
+  font-family:var(--serif);
+  font-weight:400;
+  font-style:italic;
+  font-size:1.7rem;
+  line-height:1.3;
+  color:var(--blue);
+  margin:0 0 30px;
+  max-width:34ch;
+}
+header p.intro{
+  max-width:60ch;
+  color:var(--ink-soft);
+  margin:0;
+}
+
+/* Seções */
+section{padding:34px 0;}
+.section-head{
+  display:flex;
+  align-items:center;
+  gap:18px;
+  margin:0 0 34px;
+}
+.section-head h2{
+  font-family:var(--serif);
+  font-weight:400;
+  font-size:2.5rem;
+  line-height:1.1;
+  margin:0;
+  color:var(--blue-deep);
+  white-space:nowrap;
+}
+.section-head .rule{
+  height:1px;
+  background:var(--line);
+  flex:1;
+}
+
+.subhead{
+  font-family:var(--serif);
+  font-weight:500;
+  font-size:1.55rem;
+  color:var(--blue);
+  margin:44px 0 20px;
+}
+.subhead:first-of-type{margin-top:0;}
+
+p{margin:0 0 18px;max-width:64ch;}
+.prose p:last-child{margin-bottom:0;}
+
+/* Entradas editoriais */
+.entry{
+  border-left:2px solid var(--line);
+  padding:2px 0 2px 24px;
+  margin:0 0 34px;
+  transition:border-color .25s ease;
+}
+.entry:hover{border-color:var(--soft);}
+.entry:last-child{margin-bottom:0;}
+.entry h3{
+  font-family:var(--serif);
+  font-weight:500;
+  font-size:1.5rem;
+  line-height:1.2;
+  margin:0 0 4px;
+  color:var(--ink);
+}
+.entry .context{
+  font-size:.86rem;
+  font-weight:600;
+  letter-spacing:.02em;
+  color:var(--ink-soft);
+  margin:0 0 14px;
+}
+.entry p{margin-bottom:14px;}
+.note{
+  font-style:italic;
+  color:var(--ink-soft);
+  font-size:.97rem;
+  margin:0;
+}
+.note b{font-style:normal;font-weight:600;color:var(--blue);}
+
+/* Lista de fundamentos */
+ul.plain{
+  margin:0 0 14px;
+  padding-left:20px;
+  max-width:64ch;
+}
+ul.plain li{margin-bottom:6px;}
+ul.plain li::marker{color:var(--soft);}
+
+/* Marcador para preencher */
+.todo{
+  display:inline;
+  background:var(--mist);
+  color:#175A8C;
+  font-style:italic;
+  font-size:.92em;
+  padding:1px 7px;
+  border-radius:3px;
+  border:1px dashed var(--soft);
+}
+
+/* Formação */
+.timeline{margin:0;padding:0;list-style:none;}
+.timeline li{
+  display:grid;
+  grid-template-columns:132px 1fr;
+  gap:20px;
+  padding:16px 0;
+  border-top:1px solid var(--line);
+}
+.timeline li:last-child{border-bottom:1px solid var(--line);}
+.timeline .when{
+  font-family:var(--serif);
+  font-size:1.25rem;
+  color:var(--blue);
+  font-weight:500;
+}
+.timeline .what strong{
+  display:block;
+  font-weight:600;
+  color:var(--ink);
+}
+.timeline .what span{color:var(--ink-soft);font-size:.95rem;}
+
+/* Divisor botânico */
+.divider{
+  display:flex;
+  align-items:center;
+  gap:22px;
+  padding:20px 0;
+}
+.divider .rule{height:1px;background:var(--line);flex:1;}
+.divider .bloom{width:26px;height:26px;}
+
+/* Contato */
+#contato{padding-bottom:96px;}
+.contact-list{
+  list-style:none;
+  margin:0;
+  padding:0;
+  display:grid;
+  gap:14px;
+}
+.contact-list li{
+  display:grid;
+  grid-template-columns:150px 1fr;
+  gap:16px;
+  align-items:baseline;
+}
+.contact-list .label{
+  font-family:var(--serif);
+  font-size:1.15rem;
+  color:var(--ink-soft);
+}
+
+footer{
+  border-top:1px solid var(--line);
+  padding:26px 0 60px;
+  color:var(--soft);
+  font-size:.85rem;
+}
+
+/* Entrada suave, respeitando preferência de movimento */
+header .bloom,h1,.lede,header p.intro{
+  opacity:0;
+  animation:rise .9s ease forwards;
+}
+h1{animation-delay:.08s;}
+.lede{animation-delay:.16s;}
+header p.intro{animation-delay:.24s;}
+@keyframes rise{from{opacity:0;transform:translateY(10px);}to{opacity:1;transform:none;}}
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto;}
+  header .bloom,h1,.lede,header p.intro{animation:none;opacity:1;}
+}
+
+/* Responsivo */
+@media (max-width:640px){
+  body{font-size:16px;}
+  header{padding:56px 0 44px;}
+  h1{font-size:3rem;}
+  .lede{font-size:1.4rem;}
+  .section-head h2{font-size:2rem;white-space:normal;}
+  .timeline li{grid-template-columns:1fr;gap:4px;}
+  .contact-list li{grid-template-columns:1fr;gap:2px;}
+  nav .brand{font-size:1.25rem;}
+  nav ul{gap:14px;}
+  nav ul a{font-size:.82rem;}
+}
