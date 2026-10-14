@@ -3,241 +3,295 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Juliana Stonoga | Portfólio</title>
+<title>Juliana Stonoga | Engenharia de Software</title>
+<meta name="description" content="Portfólio de Juliana Stonoga, estudante de Engenharia de Software na PUCPR e estagiária de desenvolvimento de software.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,400&family=Mulish:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
-<!-- Definição do motivo botânico (dália em traço fino), reutilizado na página -->
-<svg width="0" height="0" style="position:absolute" aria-hidden="true">
-  <symbol id="dahlia" viewBox="0 0 100 100">
-    <g fill="none" stroke="currentColor" stroke-width="1.1" stroke-linecap="round">
-      <g transform="rotate(0 50 50)"><ellipse cx="50" cy="26" rx="5.4" ry="16"/></g>
-      <g transform="rotate(45 50 50)"><ellipse cx="50" cy="26" rx="5.4" ry="16"/></g>
-      <g transform="rotate(90 50 50)"><ellipse cx="50" cy="26" rx="5.4" ry="16"/></g>
-      <g transform="rotate(135 50 50)"><ellipse cx="50" cy="26" rx="5.4" ry="16"/></g>
-      <g transform="rotate(180 50 50)"><ellipse cx="50" cy="26" rx="5.4" ry="16"/></g>
-      <g transform="rotate(225 50 50)"><ellipse cx="50" cy="26" rx="5.4" ry="16"/></g>
-      <g transform="rotate(270 50 50)"><ellipse cx="50" cy="26" rx="5.4" ry="16"/></g>
-      <g transform="rotate(315 50 50)"><ellipse cx="50" cy="26" rx="5.4" ry="16"/></g>
-      <g transform="rotate(22.5 50 50)"><ellipse cx="50" cy="37" rx="3.9" ry="10.5"/></g>
-      <g transform="rotate(67.5 50 50)"><ellipse cx="50" cy="37" rx="3.9" ry="10.5"/></g>
-      <g transform="rotate(112.5 50 50)"><ellipse cx="50" cy="37" rx="3.9" ry="10.5"/></g>
-      <g transform="rotate(157.5 50 50)"><ellipse cx="50" cy="37" rx="3.9" ry="10.5"/></g>
-      <g transform="rotate(202.5 50 50)"><ellipse cx="50" cy="37" rx="3.9" ry="10.5"/></g>
-      <g transform="rotate(247.5 50 50)"><ellipse cx="50" cy="37" rx="3.9" ry="10.5"/></g>
-      <g transform="rotate(292.5 50 50)"><ellipse cx="50" cy="37" rx="3.9" ry="10.5"/></g>
-      <g transform="rotate(337.5 50 50)"><ellipse cx="50" cy="37" rx="3.9" ry="10.5"/></g>
-      <circle cx="50" cy="50" r="4.6"/>
-    </g>
-  </symbol>
-</svg>
+<!-- Fundo interativo: rede de partículas que reage ao cursor -->
+<canvas id="bg" aria-hidden="true"></canvas>
+<div class="cursor-dot" aria-hidden="true"></div>
 
-<nav>
+<nav id="topo">
   <div class="wrap">
+    <a href="#inicio" class="brand"><span class="mono">&lt;</span>JS<span class="mono">/&gt;</span></a>
     <ul>
       <li><a href="#sobre">Sobre</a></li>
+      <li><a href="#experiencia">Experiência</a></li>
       <li><a href="#projetos">Projetos</a></li>
-      <li><a href="#criacoes">Criações</a></li>
-      <li><a href="#formacao">Formação</a></li>
+      <li><a href="#habilidades">Habilidades</a></li>
       <li><a href="#contato">Contato</a></li>
     </ul>
   </div>
 </nav>
 
-<header>
-  <div class="wrap">
-    <svg class="bloom" aria-hidden="true"><use href="#dahlia"/></svg>
-    <h1>
-      Portifólio | <br>Juliana Stonoga
-    </h1>
+<header id="inicio">
+  <div class="wrap hero">
+    <div class="hero-text">
+      <p class="eyebrow mono">Olá, eu sou</p>
+      <h1>Juliana <span class="accent">Stonoga</span></h1>
+      <p class="role mono"><span class="prompt">&gt;</span> <span id="typed">desenvolvedora de software</span><span class="caret" aria-hidden="true"></span></p>
+      <p class="intro">
+        Estudante de Engenharia de Software na PUCPR e estagiária de desenvolvimento de software,
+        com foco em desenvolvimento web, qualidade de código e processos de entrega.
+      </p>
+      <div class="cta">
+        <a href="#projetos" class="btn primary">Ver projetos</a>
+        <a href="#contato" class="btn ghost">Entrar em contato</a>
+      </div>
+    </div>
+
+    <div class="hero-card" aria-hidden="true">
+      <div class="card-bar"><span></span><span></span><span></span><em class="mono">juliana.json</em></div>
+<pre class="mono"><code>{
+  <span class="k">"curso"</span>: <span class="s">"Engenharia de Software"</span>,
+  <span class="k">"instituicao"</span>: <span class="s">"PUCPR"</span>,
+  <span class="k">"atuacao"</span>: <span class="s">"Estágio em dev"</span>,
+  <span class="k">"stack"</span>: [
+    <span class="s">"PHP"</span>, <span class="s">"MySQL"</span>,
+    <span class="s">"Java"</span>, <span class="s">"JavaFX"</span>,
+    <span class="s">"Git"</span>
+  ],
+  <span class="k">"pesquisa"</span>: <span class="s">"IA e vigilância"</span>
+}</code></pre>
+    </div>
   </div>
 </header>
 
 <main>
 
-  <section id="sobre">
+  <section id="sobre" class="reveal">
     <div class="wrap">
       <div class="section-head">
+        <span class="num mono">01</span>
         <h2>Sobre</h2>
         <div class="rule"></div>
       </div>
-      <div class="prose">
-        <p> 
-          Estudante de Engenharia de Software na Pontifícia Universidade Católica do Paraná (PUCPR), 
-          com atuação voltada ao desenvolvimento web e interesse na interseção entre tecnologia e ciências humanas.
-           Graduada em Bacharel em História (2018 - 2024) pela PUCPR. 
-           Atual Diretora do Câmpus Curitiba pelo Diretório Central de Estudantes da PUCPR.
-        </p>  
-        <p>
-        Estagiária de desenvolvimento de software na Pontifícia Universidade Católica do Paraná, 
-        atuando no suporte da elaboração de cronogramas, relatórios, indicadores e na comunicação entre equipes,
-        auxiliando no acompanhamento de riscos, melhorias, projetos estruturantes e na interface com o time de 
-        DevOps.
-        </p>
-        <p>
-          Pesquisadora do programa PIBIC/CNPq, nas áreas de Filosofia da Tecnologia e Filosofia da Educação.
-        </p>
+      <div class="about">
+        <div class="prose">
+          <p>
+            Sou estudante de Engenharia de Software na Pontifícia Universidade Católica do Paraná (PUCPR),
+            com atuação voltada ao desenvolvimento web.
+          </p>
+          <p>
+            No estágio de desenvolvimento de software da PUCPR, trabalho com manutenção e evolução de
+            sistemas internos, revisão de código via Pull Requests e documentação de processos técnicos,
+            além de apoiar o acompanhamento de projetos e a interface com o time de DevOps.
+          </p>
+          <p>
+            Também sou pesquisadora PIBIC/CNPq, estudando as relações entre inteligência artificial,
+            poder e vigilância.
+          </p>
+        </div>
+        <ul class="stats">
+          <li><strong>PUCPR</strong><span>Engenharia de Software</span></li>
+          <li><strong>Estágio</strong><span>Desenvolvimento de software</span></li>
+          <li><strong>PIBIC</strong><span>Pesquisa em IA, CNPq</span></li>
+        </ul>
       </div>
     </div>
   </section>
 
-  <div class="wrap"><div class="divider"><div class="rule"></div><svg class="bloom" aria-hidden="true"><use href="#dahlia"/></svg><div class="rule"></div></div></div>
-
-  <section id="projetos">
+  <section id="experiencia" class="reveal">
     <div class="wrap">
       <div class="section-head">
-        <h2>Portfólio de projetos</h2>
+        <span class="num mono">02</span>
+        <h2>Experiência</h2>
         <div class="rule"></div>
       </div>
 
-      <h3 class="subhead">Software e tecnologia</h3>
-
-      <div class="entry">
-        <h3>
-          Associação de Funcionários (AFPUC)
-        </h3>
-        <p class="context">Estágio em desenvolvimento de software - PUCPR</p>
-        <p>
-          Participei na reformulação, code review e manutenção do UI e UX Design do sistema web interno AFPUC, construído em PHP com banco de dados MySQL. 
-          O trabalho segue um fluxo de versionamento profissional, com revisão de código por meio de Pull Requests antes da publicação em 
-          ambiente de homologação. 
-          Além disso, também documentei o fluxo técnico da aplicação em notação BPMN, conforme os padrões de modelagem adotados pela 
-          instituição.
-        </p>
-      </div>
-
-      <div class="entry">
-        <h3>Elderia</h3>
-        <p class="context">Projeto acadêmico em JavaFX</p>
-        <p>Aplicação desktop desenvolvida em JavaFX no âmbito da graduação em Engenharia de Software.
-        <!-- PREENCHER: descreva em uma ou duas frases o que o Elderia faz e qual foi o seu papel. Se houver repositório público, adicione o link. -->
-        <span class="todo">Preencher: descreva o que o Elderia faz, seu papel e o link do repositório, se houver.</span></p>
-        <p class="note"><b>O que demonstra:</b> programação orientada a objetos e construção de interface gráfica desktop.</p>
-      </div>
-
-      <div class="entry">
-        <h3>Lúmen</h3>
-        <p class="context">Projeto acadêmico em JavaFX</p>
-        <p>Aplicação desktop desenvolvida em JavaFX no âmbito da graduação em Engenharia de Software.
-        <span class="todo">Preencher: descreva o que o Lúmen faz, seu papel e o link do repositório, se houver.</span></p>
-        <p class="note"><b>O que demonstra:</b> programação orientada a objetos e construção de interface gráfica desktop.</p>
-      </div>
-
-      <h3 class="subhead">Pesquisa</h3>
-
-      <div class="entry">
-        <h3>Inteligência artificial, poder e vigilância</h3>
-        <p class="context">Iniciação Científica, bolsa PIBIC / CNPq</p>
-        <p>Pesquisa nas áreas de Filosofia da Tecnologia e Filosofia da Educação, dedicada às relações entre inteligência artificial, poder e vigilância. A investigação dialoga com autores como Shoshana Zuboff, Kate Crawford, Michel Foucault, Achille Mbembe e Donna Haraway, e resultou na elaboração de relatório científico completo, com bolsa do Conselho Nacional de Desenvolvimento Científico e Tecnológico.</p>
-        <p class="note"><b>O que demonstra:</b> capacidade de investigação, leitura crítica da tecnologia e escrita acadêmica rigorosa.</p>
-      </div>
-
-      <div class="entry">
-        <h3>Tecnologia, vigilância e videogames</h3>
-        <p class="context">Pesquisa de mestrado em História, UFPR</p>
-        <p>Pesquisa que articula filosofia da tecnologia, estudos de vigilância e videogames como objeto de análise histórica e cultural, aprofundando a reflexão iniciada na graduação.</p>
-        <p class="note"><b>O que demonstra:</b> pensamento interdisciplinar entre tecnologia, cultura e humanidades.</p>
-      </div>
-
-      <h3 class="subhead">Coletivos e liderança</h3>
-
-      <div class="entry">
-        <h3>Presidência do Centro Acadêmico de Engenharia de Software</h3>
-        <p class="context">CABES, PUCPR</p>
-        <p>Presido o centro acadêmico do curso, representando os estudantes, articulando demandas junto à instituição e organizando iniciativas voltadas à comunidade discente.
-        <!-- PREENCHER: acrescente uma realização concreta (um evento organizado, uma conquista, um número de participantes). -->
-        <span class="todo">Preencher: acrescente uma realização concreta, como um evento organizado ou uma conquista da gestão.</span></p>
-        <p class="note"><b>O que demonstra:</b> liderança, representação e organização coletiva.</p>
-      </div>
-
-      <div class="entry">
-        <h3>Direção do Campus Curitiba</h3>
-        <p class="context">Diretório Central dos Estudantes, chapa Soma</p>
-        <p>Integro a direção do Diretório Central dos Estudantes como responsável pelo Campus Curitiba, atuando na representação estudantil em âmbito institucional.
-        <!-- PREENCHER: descreva uma ação ou projeto específico que você conduziu nessa função. -->
-        <span class="todo">Preencher: descreva uma ação ou projeto específico que você conduziu nessa função.</span></p>
-        <p class="note"><b>O que demonstra:</b> atuação em gestão e representação de âmbito ampliado.</p>
-      </div>
-
-      <div class="entry">
-        <h3>Grupo de Estudos Lipman e Sharp</h3>
-        <p class="context">Membro fundadora</p>
-        <p>Participei da fundação de um grupo de estudos dedicado à filosofia e ao desenvolvimento do pensamento crítico, contribuindo para sua concepção e para a continuidade de suas atividades.</p>
-        <p class="note"><b>O que demonstra:</b> proatividade e iniciativa intelectual na criação de um espaço coletivo.</p>
-      </div>
-
-    </div>
-  </section>
-
-  <div class="wrap"><div class="divider"><div class="rule"></div><svg class="bloom" aria-hidden="true"><use href="#dahlia"/></svg><div class="rule"></div></div></div>
-
-  <section id="criacoes">
-    <div class="wrap">
-      <div class="section-head">
-        <h2>Coleção de criações</h2>
-        <div class="rule"></div>
-      </div>
-
-      <div class="entry">
-        <h3>Sweet Dahlia</h3>
-        <p class="context">Marca de brechó autoral, anteriormente B-Side Club</p>
-        <p>Concebi e conduzo um brechó autoral, responsável por toda a sua identidade de marca, conceito e comunicação. A proposta tem raízes na cultura do disco de vinil e na estética da tatuagem tradicional, com curadoria voltada a estilos alternativo, streetwear, Y2K e vintage.</p>
-        <p>Conduzi o processo de rebranding de B-Side Club para Sweet Dahlia, criando um nome de inspiração floral e um logotipo com andorinha e flor em traço tradicional. A dália faz referência à minha gata Dalila, e o conceito nasceu inspirado nas minhas duas gatas, Mimi e Dalila. Produzo o conteúdo da marca nas redes sociais, incluindo roteiros de vídeo sobre fast fashion e identificação de peças vintage, além da pesquisa e da curadoria das peças.</p>
-        <!-- PREENCHER: adicione o @ do Instagram e, se possível, prints do feed ou do logotipo. -->
-        <p><span class="todo">Preencher: adicione o Instagram da loja e imagens do feed ou do logotipo.</span></p>
-        <p class="note"><b>O que demonstra:</b> empreendedorismo, direção de arte, criação de conteúdo e consistência de marca.</p>
-      </div>
-
-      <div class="entry">
-        <h3>Comunicação e conteúdo</h3>
-        <p class="context">Escrita acadêmica e criativa</p>
-        <p>Entre a escrita acadêmica, a produção de roteiros para redes sociais e a redação de textos, transito com naturalidade entre o registro rigoroso e o criativo.
-        <!-- PREENCHER: este e o campo mais livre. Inclua textos, poemas, artesanato, pinturas, um canal, personalizacao de roupas ou qualquer criacao que te orgulhe. -->
-        <span class="todo">Preencher: este é o campo mais livre do portfólio. Inclua outras criações que te orgulham, de textos e artesanato a projetos pessoais.</span></p>
-      </div>
-
-    </div>
-  </section>
-
-  <div class="wrap"><div class="divider"><div class="rule"></div><svg class="bloom" aria-hidden="true"><use href="#dahlia"/></svg><div class="rule"></div></div></div>
-
-  <section id="formacao">
-    <div class="wrap">
-      <div class="section-head">
-        <h2>Formação</h2>
-        <div class="rule"></div>
-      </div>
-      <ul class="timeline">
+      <ol class="timeline">
         <li>
-          <span class="when">2018 - 2024</span>
-          <span class="what"><strong>Bacharelado em História</strong><span>PUCPR, concluído</span></span>
+          <div class="when mono">Atual</div>
+          <div class="what">
+            <h3>Estagiária de Desenvolvimento de Software</h3>
+            <p class="context">Pontifícia Universidade Católica do Paraná (PUCPR)</p>
+            <p>
+              Participo da reformulação, do code review e da manutenção de UI/UX do sistema web interno da
+              Associação de Funcionários (AFPUC), construído em PHP com banco de dados MySQL. O trabalho segue
+              um fluxo de versionamento profissional, com revisão por Pull Requests antes da publicação em
+              ambiente de homologação.
+            </p>
+            <p>
+              Documentei o fluxo técnico da aplicação em notação BPMN, seguindo os padrões de modelagem da
+              instituição, e apoio a elaboração de cronogramas, relatórios e indicadores, o acompanhamento de
+              riscos e melhorias, e a comunicação com o time de DevOps.
+            </p>
+            <ul class="tags">
+              <li>PHP</li><li>MySQL</li><li>Git</li><li>Pull Requests</li><li>Code review</li><li>UI/UX</li><li>BPMN</li><li>DevOps</li>
+            </ul>
+          </div>
         </li>
         <li>
-          <span class="when">2025 - Em curso</span>
-          <span class="what"><strong>Engenharia de Software</strong><span>PUCPR</span></span>
+          <div class="when mono">PIBIC</div>
+          <div class="what">
+            <h3>Pesquisadora de Iniciação Científica</h3>
+            <p class="context">Bolsa PIBIC / CNPq</p>
+            <p>
+              Pesquisa em Filosofia da Tecnologia sobre as relações entre inteligência artificial, poder e
+              vigilância, dialogando com autoras e autores como Shoshana Zuboff e Kate Crawford. Resultou em
+              relatório científico completo.
+            </p>
+            <ul class="tags">
+              <li>Inteligência artificial</li><li>Ética em tecnologia</li><li>Escrita técnica</li>
+            </ul>
+          </div>
         </li>
-      </ul>
+      </ol>
     </div>
   </section>
 
-  <div class="wrap"><div class="divider"><div class="rule"></div><svg class="bloom" aria-hidden="true"><use href="#dahlia"/></svg><div class="rule"></div></div></div>
-
-  <section id="contato">
+  <section id="projetos" class="reveal">
     <div class="wrap">
       <div class="section-head">
+        <span class="num mono">03</span>
+        <h2>Projetos</h2>
+        <div class="rule"></div>
+      </div>
+
+      <div class="carousel" aria-roledescription="carrossel" aria-label="Projetos em destaque">
+        <div class="carousel-window">
+          <div class="carousel-track">
+
+            <article class="slide" aria-roledescription="slide" aria-label="1 de 4">
+              <div class="slide-visual" aria-hidden="true">
+                <div class="visual-bar"><span></span><span></span><span></span><em class="mono">afpuc.php</em></div>
+                <div class="visual-body">
+                  <span class="visual-icon mono">&lt;?php</span>
+                  <span class="visual-name">AFPUC</span>
+                </div>
+              </div>
+              <div class="slide-content">
+                <span class="kind mono">Estágio · PUCPR</span>
+                <h3>Sistema AFPUC</h3>
+                <p>
+                  Sistema web interno da Associação de Funcionários da PUCPR. Atuei na reformulação de UI/UX,
+                  na manutenção e na revisão de código via Pull Requests, com publicação em ambiente de homologação.
+                </p>
+                <p>Também documentei o fluxo técnico da aplicação em notação BPMN.</p>
+                <ul class="tags"><li>PHP</li><li>MySQL</li><li>Git</li><li>BPMN</li><li>UI/UX</li></ul>
+              </div>
+            </article>
+
+            <article class="slide" aria-roledescription="slide" aria-label="2 de 4">
+              <div class="slide-visual" aria-hidden="true">
+                <div class="visual-bar"><span></span><span></span><span></span><em class="mono">Elderia.java</em></div>
+                <div class="visual-body">
+                  <span class="visual-icon mono">class</span>
+                  <span class="visual-name">Elderia</span>
+                </div>
+              </div>
+              <div class="slide-content">
+                <span class="kind mono">Projeto acadêmico</span>
+                <h3>Elderia</h3>
+                <!-- PREENCHER: descreva o que o Elderia faz e qual foi o seu papel. Se houver repositório, adicione: <a class="btn primary" href="..." target="_blank" rel="noopener">Ver código</a> -->
+                <p>
+                  Aplicação desktop desenvolvida em JavaFX na graduação em Engenharia de Software, aplicando
+                  programação orientada a objetos e construção de interface gráfica.
+                </p>
+                <ul class="tags"><li>Java</li><li>JavaFX</li><li>POO</li></ul>
+              </div>
+            </article>
+
+            <article class="slide" aria-roledescription="slide" aria-label="3 de 4">
+              <div class="slide-visual" aria-hidden="true">
+                <div class="visual-bar"><span></span><span></span><span></span><em class="mono">Lumen.java</em></div>
+                <div class="visual-body">
+                  <span class="visual-icon mono">class</span>
+                  <span class="visual-name">Lúmen</span>
+                </div>
+              </div>
+              <div class="slide-content">
+                <span class="kind mono">Projeto acadêmico</span>
+                <h3>Lúmen</h3>
+                <!-- PREENCHER: descreva o que o Lúmen faz e qual foi o seu papel. Se houver repositório, adicione: <a class="btn primary" href="..." target="_blank" rel="noopener">Ver código</a> -->
+                <p>
+                  Aplicação desktop desenvolvida em JavaFX na graduação em Engenharia de Software, aplicando
+                  programação orientada a objetos e construção de interface gráfica.
+                </p>
+                <ul class="tags"><li>Java</li><li>JavaFX</li><li>POO</li></ul>
+              </div>
+            </article>
+
+            <article class="slide" aria-roledescription="slide" aria-label="4 de 4">
+              <div class="slide-visual" aria-hidden="true">
+                <div class="visual-bar"><span></span><span></span><span></span><em class="mono">index.html</em></div>
+                <div class="visual-body">
+                  <span class="visual-icon mono">&lt;/&gt;</span>
+                  <span class="visual-name">Portfólio</span>
+                </div>
+              </div>
+              <div class="slide-content">
+                <span class="kind mono">Projeto pessoal</span>
+                <h3>Este portfólio</h3>
+                <p>
+                  Site estático publicado no GitHub Pages, com fundo interativo em Canvas e carrossel
+                  escritos em JavaScript puro, sem bibliotecas.
+                </p>
+                <ul class="tags"><li>HTML</li><li>CSS</li><li>JavaScript</li><li>Canvas</li></ul>
+                <a class="btn primary" href="https://github.com/juliana-stonoga/juliana-stonoga.github.io" target="_blank" rel="noopener">Ver código</a>
+              </div>
+            </article>
+
+          </div>
+        </div>
+
+        <button class="carousel-arrow prev" type="button" aria-label="Projeto anterior">&#8592;</button>
+        <button class="carousel-arrow next" type="button" aria-label="Próximo projeto">&#8594;</button>
+
+        <div class="carousel-footer">
+          <div class="carousel-dots"></div>
+          <div class="carousel-counter mono"><span class="current">01</span> / <span class="total">04</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="habilidades" class="reveal">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="num mono">04</span>
+        <h2>Habilidades</h2>
+        <div class="rule"></div>
+      </div>
+
+      <div class="skills">
+        <div class="skill-group">
+          <h3>Linguagens</h3>
+          <ul class="tags"><li>Java</li><li>PHP</li><li>JavaScript</li><li>HTML</li><li>CSS</li><li>SQL</li></ul>
+        </div>
+        <div class="skill-group">
+          <h3>Ferramentas e tecnologias</h3>
+          <ul class="tags"><li>JavaFX</li><li>MySQL</li><li>Git</li><li>GitHub</li><li>GitHub Pages</li></ul>
+        </div>
+        <div class="skill-group">
+          <h3>Processos</h3>
+          <ul class="tags"><li>Code review</li><li>Pull Requests</li><li>Homologação</li><li>BPMN</li><li>Indicadores</li><li>Gestão de riscos</li></ul>
+        </div>
+        <div class="skill-group">
+          <h3>Formação</h3>
+          <p class="edu"><strong>Engenharia de Software</strong><span>PUCPR, 2025 em curso</span></p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="contato" class="reveal">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="num mono">05</span>
         <h2>Contato</h2>
         <div class="rule"></div>
       </div>
-      <!-- PREENCHER: substitua os campos abaixo pelos seus links reais. -->
+      <p class="contact-lede">Aberta a oportunidades em desenvolvimento de software. Vamos conversar?</p>
       <ul class="contact-list">
-        <li><span class="label">GitHub</span><span><a href="https://github.com/juliana-stonoga" target="_blank">github.com/juliana-stonoga</a> </span></li>
-        <li><span class="label">LinkedIn</span><span><a href="https://www.linkedin.com/in/juliana-stonoga/" target="_blank">linkedin.com/in/juliana-stonoga</a> </span></li>
-        <li><span class="label">E-mail</span><span><a href="mailto:stonoga.juliana@gmail.com">stonoga.juliana@gmail.com</a> </span></li>
-        <li><span class="label">Sweet Dahlia</span><span><a href="https://www.instagram.com/dahlia.vintageshop/" target="_blank">instagram.com/dahlia.vintageshop</a> </span></li>
+        <li><a href="mailto:stonoga.juliana@gmail.com"><span class="label mono">E-mail</span><span>stonoga.juliana@gmail.com</span></a></li>
+        <li><a href="https://github.com/juliana-stonoga" target="_blank" rel="noopener"><span class="label mono">GitHub</span><span>github.com/juliana-stonoga</span></a></li>
+        <li><a href="https://www.linkedin.com/in/juliana-stonoga/" target="_blank" rel="noopener"><span class="label mono">LinkedIn</span><span>linkedin.com/in/juliana-stonoga</span></a></li>
       </ul>
     </div>
   </section>
@@ -245,8 +299,9 @@
 </main>
 
 <footer>
-  <div class="wrap">Juliana, 2026. Portfólio.</div>
+  <div class="wrap mono">© 2026 Juliana Stonoga</div>
 </footer>
 
+<script src="script.js"></script>
 </body>
 </html>
